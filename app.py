@@ -46,7 +46,7 @@ def chat():
                 "Content-Type": "application/json"
             },
             json={
-                "model": "llama3-8b-8192",  # Groq ka super fast aur free model
+                "model": "llama-3.1-8b-instant",  # Groq ka super fast aur free model
                 "messages": messages,
                 "temperature": 0.7
             }
