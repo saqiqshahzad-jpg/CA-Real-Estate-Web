@@ -429,28 +429,30 @@
 </footer>
 
 <script>
-// Yeh tumhari website ke chat elements ko pakad raha hai
-const sendBtn = document.querySelector('.chat-input-wrapper button') || document.querySelector('.send-btn'); 
-const chatInput = document.querySelector('.chat-input-wrapper input') || document.querySelector('.chat-input');
-const chatMessagesContainer = document.querySelector('.chat-messages-container') || document.querySelector('.conversation-stream');
+// Google Stitch ke exact elements ko target karne ke liye smart selectors
+const chatInput = document.querySelector('input[placeholder="Type a message..."]');
+const chatMessagesContainer = document.querySelector('.container_queries');
+
+// Poore page par 'send' text wala icon dhoondna
+const sendBtn = Array.from(document.querySelectorAll('span')).find(el => el.textContent.trim() === 'send');
 
 let chatHistory = [];
 
 async function sendMessageToJanwar() {
+    if (!chatInput || !chatMessagesContainer) return;
+    
     const message = chatInput.value.trim();
     if (!message) return;
 
-    // 1. User ka message screen par dikhana
+    // 1. User ka message chat stream mein dikhana
     appendMessage("user", message);
     chatInput.value = "";
 
-    // 2. Render ke janwar se baat karna
+    // 2. Render par chalne wale Janwar se baat karna
     try {
-        // TERE RENDER KA BACKEND URL CODES ACTIVE HERE!
         const response = await fetch("https://ca-real-estate-web.onrender.com/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            json: true,
             body: JSON.stringify({
                 message: message,
                 history: chatHistory
@@ -459,7 +461,7 @@ async function sendMessageToJanwar() {
 
         const data = await response.json();
         
-        // 3. Janwar ka jawab screen par dikhana
+        // 3. Janwar ka reply screen par dikhana
         appendMessage("bot", data.reply);
 
         // History yaad rakhne ke liye save karna
@@ -467,29 +469,47 @@ async function sendMessageToJanwar() {
         chatHistory.push({ "role": "assistant", "content": data.reply });
 
     } catch (error) {
-        appendMessage("bot", "Sorry Bro, connection mein thora masla aa raha hai!");
+        appendMessage("bot", "Sorry Bro, dimaagh tak signal nahi pahuche!");
         console.error(error);
     }
 }
 
 function appendMessage(sender, text) {
     const msgDiv = document.createElement("div");
-    msgDiv.className = `message ${sender}-message`;
-    msgDiv.style.padding = "10px";
-    msgDiv.style.margin = "5px 0";
-    msgDiv.style.color = sender === "user" ? "#fff" : "#D4AF37"; // User white, Bot Gold
-    msgDiv.innerText = sender === "user" ? `You: ${text}` : `Concierge: ${text}`;
+    
+    // Website ke light theme ke mutabik premium styling
+    msgDiv.style.padding = "10px 14px";
+    msgDiv.style.margin = "6px 0";
+    msgDiv.style.borderRadius = "12px";
+    msgDiv.style.maxWidth = "85%";
+    msgDiv.style.fontSize = "14px";
+    msgDiv.style.clear = "both";
+    
+    if (sender === "user") {
+        msgDiv.style.backgroundColor = "#E5E7EB"; // Clean gray for user
+        msgDiv.style.color = "#1F2937";
+        msgDiv.style.float = "right";
+    } else {
+        msgDiv.style.backgroundColor = "#F3F4F6"; // Off-white for bot
+        msgDiv.style.color = "#111827";
+        msgDiv.style.float = "left";
+        msgDiv.style.borderLeft = "3px solid #1F2937"; // Clean accent line
+    }
+    
+    msgDiv.innerText = text;
     chatMessagesContainer.appendChild(msgDiv);
+    
+    // Auto scroll to bottom
     chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
 }
 
-// Button click aur Enter key par function chalana
-if(sendBtn) sendBtn.addEventListener("click", sendMessageToJanwar);
-if(chatInput) {
+// Click aur Enter key connections
+if (sendBtn) sendBtn.addEventListener("click", sendMessageToJanwar);
+if (chatInput) {
     chatInput.addEventListener("keypress", function(e) {
         if (e.key === "Enter") sendMessageToJanwar();
     });
 }
-</script>        
+</script>       
 
 </body></html>
