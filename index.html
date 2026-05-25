@@ -1,515 +1,326 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Estate No. 88 - Luxury Mansion</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:wght@400;500&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" style="">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Estate No. 88 - Luxury Mansion</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
           theme: {
             extend: {
-              "colors": {
-                      "primary-container": "#1a1c1c",
-                      "on-secondary-container": "#646464",
-                      "on-primary-fixed": "#1a1c1c",
-                      "surface-variant": "#e2e2e2",
-                      "on-primary-fixed-variant": "#454747",
-                      "secondary-container": "#e3e2e2",
-                      "tertiary": "#000000",
-                      "on-surface-variant": "#434747",
-                      "on-secondary": "#ffffff",
-                      "surface-container-highest": "#e2e2e2",
-                      "surface-dim": "#dadada",
-                      "on-error-container": "#93000a",
-                      "secondary": "#5e5e5e",
-                      "on-tertiary": "#ffffff",
-                      "surface-container": "#eeeeee",
-                      "on-primary-container": "#838484",
-                      "on-tertiary-fixed-variant": "#454747",
-                      "on-tertiary-fixed": "#1a1c1c",
-                      "outline-variant": "#c4c7c7",
-                      "on-background": "#1a1c1c",
-                      "surface-container-low": "#f3f3f4",
-                      "error-container": "#ffdad6",
-                      "on-tertiary-container": "#838484",
-                      "tertiary-fixed": "#e2e2e2",
-                      "inverse-on-surface": "#f0f1f1",
-                      "inverse-surface": "#2f3131",
-                      "error": "#ba1a1a",
-                      "primary-fixed-dim": "#c6c6c6",
-                      "outline": "#747878",
-                      "surface-container-high": "#e8e8e8",
-                      "primary-fixed": "#e2e2e2",
-                      "tertiary-fixed-dim": "#c6c6c7",
-                      "on-error": "#ffffff",
-                      "secondary-fixed": "#e3e2e2",
-                      "inverse-primary": "#c6c6c6",
-                      "secondary-fixed-dim": "#c7c6c6",
-                      "surface": "#ffffff",
-                      "surface-container-lowest": "#ffffff",
-                      "surface-tint": "#5d5f5e",
-                      "on-secondary-fixed-variant": "#464747",
-                      "primary": "#000000",
-                      "on-surface": "#1a1c1c",
-                      "on-secondary-fixed": "#1b1c1c",
-                      "on-primary": "#ffffff",
-                      "surface-bright": "#ffffff",
-                      "tertiary-container": "#1a1c1c",
-                      "background": "#ffffff"
+              colors: {
+                  primary: "#111827", // Deep charcoal black
+                  secondary: "#6B7280", // Elegant gray
+                  surface: "#ffffff", // Pure white
+                  "surface-dim": "#F9FAFB", // Off-white for sections
+                  "outline-variant": "#E5E7EB", // Clean borders
               },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "section-padding-desktop": "120px",
-                      "section-padding-mobile": "64px",
-                      "gutter": "32px",
-                      "margin-desktop": "80px",
-                      "max-width": "1440px"
-              },
-              "fontFamily": {
-                      "display-lg": [
-                              "Playfair Display"
-                      ],
-                      "label-caps": [
-                              "Inter"
-                      ],
-                      "label-sm": [
-                              "Inter"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ],
-                      "headline-sm": [
-                              "Playfair Display"
-                      ],
-                      "headline-md": [
-                              "Playfair Display"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "display-lg-mobile": [
-                              "Playfair Display"
-                      ]
-              },
-              "fontSize": {
-                      "display-lg": [
-                              "64px",
-                              {
-                                      "lineHeight": "1.1",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "label-caps": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "letterSpacing": "0.12em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "label-sm": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-md": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "letterSpacing": "0.01em",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-sm": [
-                              "24px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "headline-md": [
-                              "32px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "body-lg": [
-                              "18px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "letterSpacing": "0.01em",
-                                      "fontWeight": "300"
-                              }
-                      ],
-                      "display-lg-mobile": [
-                              "40px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "400"
-                              }
-                      ]
+              fontFamily: {
+                  "display-lg": ["Playfair Display", "serif"],
+                  "headline-md": ["Playfair Display", "serif"],
+                  "label-caps": ["Inter", "sans-serif"],
+                  "body-md": ["Inter", "sans-serif"],
+                  "body-lg": ["Inter", "sans-serif"]
               }
-      },
-          },
+            }
+          }
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
-        .icon-fill {
-            font-variation-settings: 'FILL' 1;
+        /* Custom scrollbar for chat to make it look premium */
+        #chat-messages-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        #chat-messages-container::-webkit-scrollbar-thumb {
+            background: #D1D5DB;
+            border-radius: 4px;
         }
     </style>
 </head>
-<body class="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav aria-label="Top Navigation" class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-xl bg-surface/70">
-<div class="flex justify-between items-center px-8 md:px-margin-desktop py-6 max-w-max-width mx-auto">
-<div class="font-label-caps text-label-caps tracking-[0.2em] text-primary">
+<body class="bg-surface text-primary antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <nav aria-label="Top Navigation" class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant">
+        <div class="flex justify-between items-center px-8 md:px-12 py-6 max-w-[1440px] mx-auto">
+            <div class="font-label-caps text-xs font-semibold tracking-[0.2em] text-primary">
                 ESTATE NO. 88
             </div>
-<!-- Desktop Navigation -->
-<div class="hidden md:flex items-center space-x-12">
-<a class="text-primary border-b border-primary pb-1 font-label-caps text-label-caps hover:opacity-70 transition-opacity duration-300" href="#overview">Overview</a>
-<a class="text-secondary hover:text-primary font-label-caps text-label-caps transition-all duration-300 hover:opacity-70" href="#specs">Specs</a>
-<a class="text-secondary hover:text-primary font-label-caps text-label-caps transition-all duration-300 hover:opacity-70" href="#gallery">Gallery</a>
-<a class="text-secondary hover:text-primary font-label-caps text-label-caps transition-all duration-300 hover:opacity-70" href="#location">Location</a>
-</div>
-<!-- Primary Action -->
-<a class="hidden md:inline-flex bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 hover:bg-primary/90 transition-colors duration-300 uppercase tracking-widest" href="#inquire">
+            <div class="hidden md:flex items-center space-x-12">
+                <a class="text-primary border-b border-primary pb-1 font-label-caps text-xs tracking-widest hover:opacity-70 transition-opacity duration-300" href="#overview">Overview</a>
+                <a class="text-secondary hover:text-primary font-label-caps text-xs tracking-widest transition-all duration-300 hover:opacity-70" href="#specs">Specs</a>
+                <a class="text-secondary hover:text-primary font-label-caps text-xs tracking-widest transition-all duration-300 hover:opacity-70" href="#gallery">Gallery</a>
+                <a class="text-secondary hover:text-primary font-label-caps text-xs tracking-widest transition-all duration-300 hover:opacity-70" href="#location">Location</a>
+            </div>
+            <a class="hidden md:inline-flex bg-primary text-white font-label-caps text-xs font-semibold px-8 py-4 hover:bg-gray-800 transition-colors duration-300 uppercase tracking-widest" href="#inquire">
                 Private Tour
             </a>
-<!-- Mobile Menu Toggle -->
-<button class="md:hidden text-primary">
-<span class="material-symbols-outlined text-2xl">menu</span>
-</button>
-</div>
-</nav>
-<!-- Hero Section -->
-<section class="relative h-screen min-h-[800px] w-full flex items-end pb-section-padding-mobile md:pb-section-padding-desktop px-8 md:px-margin-desktop bg-surface-dim">
-<!-- Background Image -->
-<div class="absolute inset-0 w-full h-full">
-<img alt="Estate No. 88 Exterior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrx9mjzvgrr7ukVqUpOmdanAmOFjDqTDBCDiIcr2g3S7C16vLGTI1GY6ylf7NSirVWDyx-N0n9xWe_uDbXYHLbt2u-cYM2CqJg_JSF0ePzbFDup3x8NLXXJ20je9zNsGO5EIqV7cap4mgH3QdLlZwn_zo9VccQkKCm0f_D-UNNf4GkZcGkrAc-IUFdNVnsh9ppiTz2QBSUF8cJNx0W8ul-JAblWZ_CVJ9Ny2nJlHzpzzL6pT0iEX7ncTL2qICoHiGPghUUP0ifaJpc">
-<!-- Subtle Overlay -->
-<div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-primary/10"></div>
-</div>
-<!-- Content -->
-<div class="relative z-10 w-full max-w-max-width mx-auto text-on-primary">
-<div class="max-w-3xl">
-<p class="font-label-caps text-label-caps uppercase tracking-[0.2em] mb-6 text-on-primary/80">Bel Air, Los Angeles</p>
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-primary mb-12">
+            <button class="md:hidden text-primary">
+                <span class="material-symbols-outlined text-2xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative h-screen min-h-[800px] w-full flex items-end pb-24 md:pb-32 px-8 md:px-12 bg-surface-dim">
+        <div class="absolute inset-0 w-full h-full">
+            <img alt="Estate No. 88 Exterior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrx9mjzvgrr7ukVqUpOmdanAmOFjDqTDBCDiIcr2g3S7C16vLGTI1GY6ylf7NSirVWDyx-N0n9xWe_uDbXYHLbt2u-cYM2CqJg_JSF0ePzbFDup3x8NLXXJ20je9zNsGO5EIqV7cap4mgH3QdLlZwn_zo9VccQkKCm0f_D-UNNf4GkZcGkrAc-IUFdNVnsh9ppiTz2QBSUF8cJNx0W8ul-JAblWZ_CVJ9Ny2nJlHzpzzL6pT0iEX7ncTL2qICoHiGPghUUP0ifaJpc">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        </div>
+        <div class="relative z-10 w-full max-w-[1440px] mx-auto text-white">
+            <div class="max-w-3xl">
+                <p class="font-label-caps text-xs uppercase tracking-[0.2em] mb-6 text-white/80 font-semibold">Bel Air, Los Angeles</p>
+                <h1 class="font-display-lg text-5xl md:text-7xl mb-12">
                     ESTATE NO. 88
                 </h1>
-<div class="flex flex-col sm:flex-row gap-6">
-<a class="bg-on-primary text-primary font-label-caps text-label-caps px-10 py-5 hover:bg-surface transition-colors duration-300 uppercase tracking-widest text-center" href="#inquire">
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <a class="bg-white text-primary font-label-caps text-xs font-semibold px-10 py-5 hover:bg-gray-100 transition-colors duration-300 uppercase tracking-widest text-center" href="#inquire">
                         Private Tour
                     </a>
-<a class="border border-on-primary text-on-primary font-label-caps text-label-caps px-10 py-5 hover:bg-on-primary/10 transition-colors duration-300 uppercase tracking-widest text-center" href="#inquire">
+                    <a class="border border-white text-white font-label-caps text-xs font-semibold px-10 py-5 hover:bg-white/10 transition-colors duration-300 uppercase tracking-widest text-center" href="#overview">
                         Explore Property
                     </a>
-</div>
-</div>
-</div>
-</section>
-<!-- Overview / Stats -->
-<section class="py-section-padding-mobile md:py-section-padding-desktop px-8 md:px-margin-desktop bg-surface" id="overview">
-<div class="max-w-max-width mx-auto">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-gutter border-b border-outline-variant pb-16">
-<!-- Stat 1 -->
-<div class="flex flex-col space-y-4">
-<span class="material-symbols-outlined text-secondary text-3xl">bed</span>
-<span class="font-headline-md text-headline-md text-primary">6</span>
-<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Bedrooms</span>
-</div>
-<!-- Stat 2 -->
-<div class="flex flex-col space-y-4">
-<span class="material-symbols-outlined text-secondary text-3xl">bathtub</span>
-<span class="font-headline-md text-headline-md text-primary">8</span>
-<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Bathrooms</span>
-</div>
-<!-- Stat 3 -->
-<div class="flex flex-col space-y-4">
-<span class="material-symbols-outlined text-secondary text-3xl">square_foot</span>
-<span class="font-headline-md text-headline-md text-primary">12,500</span>
-<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Square Feet</span>
-</div>
-<!-- Stat 4 -->
-<div class="flex flex-col space-y-4">
-<span class="material-symbols-outlined text-secondary text-3xl">landscape</span>
-<span class="font-headline-md text-headline-md text-primary">1.2</span>
-<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Acres</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Detailed Specs -->
-<section class="py-section-padding-mobile md:py-section-padding-desktop px-8 md:px-margin-desktop bg-surface" id="specs">
-<div class="max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-<div class="md:col-span-5 space-y-8">
-<h2 class="font-headline-md text-headline-md text-primary">Architectural Precision</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 md:py-32 px-8 md:px-12 bg-surface" id="overview">
+        <div class="max-w-[1440px] mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-b border-outline-variant pb-16">
+                <div class="flex flex-col space-y-4">
+                    <span class="material-symbols-outlined text-secondary text-3xl">bed</span>
+                    <span class="font-headline-md text-4xl text-primary">6</span>
+                    <span class="font-label-caps text-xs text-secondary font-semibold uppercase tracking-widest">Bedrooms</span>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <span class="material-symbols-outlined text-secondary text-3xl">bathtub</span>
+                    <span class="font-headline-md text-4xl text-primary">8</span>
+                    <span class="font-label-caps text-xs text-secondary font-semibold uppercase tracking-widest">Bathrooms</span>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <span class="material-symbols-outlined text-secondary text-3xl">square_foot</span>
+                    <span class="font-headline-md text-4xl text-primary">12,500</span>
+                    <span class="font-label-caps text-xs text-secondary font-semibold uppercase tracking-widest">Square Feet</span>
+                </div>
+                <div class="flex flex-col space-y-4">
+                    <span class="material-symbols-outlined text-secondary text-3xl">landscape</span>
+                    <span class="font-headline-md text-4xl text-primary">1.2</span>
+                    <span class="font-label-caps text-xs text-secondary font-semibold uppercase tracking-widest">Acres</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-24 px-8 md:px-12 bg-surface" id="specs">
+        <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 space-y-8">
+                <h2 class="font-headline-md text-4xl text-primary">Architectural Precision</h2>
+                <p class="font-body-lg text-lg text-secondary leading-relaxed">
                     Designed with an uncompromising attention to detail, Estate No. 88 represents the pinnacle of modern Los Angeles living. Expansive volumes of space flow seamlessly, defined by crisp geometry and a curated palette of natural materials.
                 </p>
-<div class="pt-8">
-<ul class="space-y-6">
-<li class="flex items-start space-x-4">
-<span class="material-symbols-outlined text-secondary mt-1">check</span>
-<div>
-<span class="block font-label-caps text-label-caps text-primary uppercase tracking-widest mb-1">Materials</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Imported Italian Travertine, Custom Oak Millwork</span>
-</div>
-</li>
-<li class="flex items-start space-x-4">
-<span class="material-symbols-outlined text-secondary mt-1">check</span>
-<div>
-<span class="block font-label-caps text-label-caps text-primary uppercase tracking-widest mb-1">Technology</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Fully integrated Savant smart home ecosystem</span>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="md:col-span-6 md:col-start-7 h-[600px] bg-surface-dim relative mt-12 md:mt-0">
-<img alt="Interior Details" class="w-full h-full object-cover grayscale opacity-90" data-alt="A stunning modern luxury living room bathed in natural light. Minimalist aesthetics featuring pure white walls, a massive charcoal gray modular sofa, and a large custom oak coffee table. Floor-to-ceiling glass doors open to a pristine outdoor terrace. The styling is high-end, gallery-like, with meticulous attention to clean lines and subtle textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfO-JQw2FRaCTwlKY5Jo1mau7KgA7Z6CZ9DwA8sr0BxfeqxxwQM-uCJ7-iOM47kRH7N5ZIkODt9Fk0lgQJf8ODftJfJwd9uwBgYIP13YjepkkKTgbbabOTbbdw-j7DGmVOahF69DFN2FpKGCPPuKpOjXhMhsP9e6BoMmVb_TtMJE0nbqldlGhS11bPp4HInGAbCua_lkP70FzCyw3zkw9XCjBHpIx-Rbu595lliZynyT4kjuV_lg5yQ7MgQtx1ojXSGcDwanmteiRc">
-</div>
-</div>
-</section>
-<!-- Gallery Bento Grid -->
-<section class="py-section-padding-mobile md:py-section-padding-desktop px-8 md:px-margin-desktop bg-surface" id="gallery">
-<div class="max-w-max-width mx-auto">
-<div class="flex justify-between items-end mb-16">
-<h2 class="font-headline-md text-headline-md text-primary">Curated Views</h2>
-<a class="hidden md:inline-flex items-center space-x-2 font-label-caps text-label-caps text-primary uppercase tracking-widest border-b border-primary pb-1 hover:opacity-70 transition-opacity" href="#">
-<span class="">View Full Gallery</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]">
-<div class="md:col-span-2 bg-surface-dim relative group overflow-hidden">
-<img alt="Kitchen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A wide-angle architectural shot of a sleek modern kitchen in a luxury mansion. The space features stark white minimalist cabinetry contrasting with a massive deep black marble island. Sunlight streams across the polished concrete floor, highlighting the strict geometric lines and premium stainless steel appliances. The mood is pristine and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSmRCCPcVDTvGKLiwXQp5dzMEs0-siHi2kLzkitS7eOQDa2LJcS44rN5PmIUrfPadU2B5QjSSAk0jxNcA80Ar6QGBkmtmeNWpNW6_FcdFo1Qud7dWVmk5QTqAzO-EynW5yPCFV4XN0foGdqYzHHDEQfkKu9eK8n7SjiqqlAoD9KlSuoY0yOyP0fGwbd2ifRWvgUMpCjezJGpK9foQQ5Vhay8ETjf2Z1nirc8bDvN-7qxVxPWjrCMVCwchwFshV8LN8mVYE1jnkFYpL">
-</div>
-<div class="bg-surface-dim relative group overflow-hidden">
-<img alt="Bathroom" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up of a luxurious modern bathroom featuring a freestanding sculptural white bathtub against a textured dark grey slate wall. Minimalist chrome fixtures add a touch of reflective light. The composition is tight, focusing on the high-end materials, sleek surfaces, and the stark contrast between light and shadow. The aesthetic is spa-like and intensely serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7qX7M2S5csLDmJyAEdr7ToP23-d00f_Hyfcq-DrBPuGVax42o4ATqFIx5qmtbjV1pye8BDQhd8iAiu0ewI_mOB6v_GDQ07do1lRJBM4u_QBrIn4uAlvMImw0XtEAvWx2OoRgdA6vDGt2olesUTKuR7K5paulAHAMWXQMME02LnN8ObgK7WR7PLQiQXyRreVfm6nxGPRD47lIvHjX--yM88I6EYY8mMgjTlHUcs4VbZke7WIAFr0lNqfc7vochT3N42uw-uP6VIXNJ">
-</div>
-<div class="bg-surface-dim relative group overflow-hidden">
-<img alt="Staircase" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A striking detail shot of a cantilevered architectural staircase made of dark walnut wood and frameless structural glass. The background is pure white minimalist wall. The lighting casts dramatic, geometric shadows across the pristine white floor, emphasizing the precision engineering and floating design of the stairs in this ultra-modern residence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqhY8qrL0OON8EXVGrvuRo2VtshZcK7ejhq4hOJkuvvsgWGtEP3o98KCyUBnIvHmTONeSkwcpZ76Tr1yDroTl8ddXi2rTeBOuVgsbOG8Ifx24in1JNjSufTFoB2c-XYgJa7CopsPaJLQnDk4S10JWNJhrVbZRbWQVpimz9QDyQKLFC6msXJNblGAdw0q7SOGrYZ0or_VhANOgOrKi5QwaR_xxXXSB0epeGTW8uG4nmseOYcvOZI4pwlUzmF79GbfmU1s0HwFXKEe-K">
-</div>
-<div class="md:col-span-2 bg-surface-dim relative group overflow-hidden">
-<img alt="Pool Terrace" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An expansive outdoor terrace of a luxury Los Angeles estate at dusk. An infinity edge pool reflects the twilight sky. Minimalist modern loungers sit on pale limestone paving. The lighting is subtle, focused on illuminating the crisp architectural lines of the house and the pristine water. The overall feeling is one of quiet, modern luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1CluNJJ3vfbaiGHI0-xAlE824S44loAqMqubSRmLFewl2maMXhY19ikbdQefPn01cIbT3SfbJP3y9akgvvTXcKP7w1NZ78QUNaWJIuOqRyYeujFf2H3W5h5zM3zGbfaVQ-l-oVQSOoa6U_mkJ5ckiGC-Nx7u_qGUs-qqOeKgW6ul9Fxn3NtEEbIuPp0udKXdtpKwD0AzY6LxRi7hdNhBqng84nuI_T1B1ny1j5YbwQnCY0kmduKEtEpKfyDUt2vT9uhAgITb2E06z">
-</div>
-</div>
-<div class="mt-8 md:hidden text-center">
-<a class="inline-flex items-center space-x-2 font-label-caps text-label-caps text-primary uppercase tracking-widest border-b border-primary pb-1" href="#">
-<span class="">View Full Gallery</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</section>
-<!-- Neighborhood Section -->
-<section class="py-section-padding-mobile md:py-section-padding-desktop px-8 md:px-margin-desktop bg-surface" id="location">
-<div class="max-w-max-width mx-auto">
-<h2 class="font-headline-md text-headline-md text-primary mb-12">The Neighborhood</h2>
-<div class="relative w-full h-[600px] bg-surface-container rounded-lg overflow-hidden flex shadow-sm border border-outline-variant">
-<!-- Map Area -->
-<div class="w-full md:w-2/3 h-full relative">
-<img alt="Map of Bel Air Neighborhood" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujjOkLYwt4duQJWfaZ29YCtOLLCrseUqUhrOgZzT7k-nmY-F9xuQRTZnfaS5hgq7tJWtaLCDTTgbDcWCoPGuCupNMZaRp30YaY6p5n63NeGr0LIm0mDHRPturQ4gMlg7ow8nwyrOt7U9sXQx1pMeRbTPt9nGo1uYHzZa8OXKqBfypLXhbJNgeEgck0qauDM9zHIJMBkhGeUVdyjA0xa-0UzmEkfRcZLupGJ-d3wxeXiMdAy8y8eIrIRxTmb">
-</div>
-<!-- Overlay / Sidebar -->
-<div class="absolute top-0 right-0 h-full w-full md:w-1/3 bg-surface/90 backdrop-blur-md p-8 md:relative md:bg-surface flex flex-col justify-center border-l border-outline-variant/30">
-<h3 class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-8 border-b border-outline-variant pb-4">Premium Spots</h3>
-<ul class="space-y-6">
-<li class="">
-<span class="block font-headline-sm text-headline-sm text-primary mb-1">Nobu Malibu</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Iconic oceanfront dining</span>
-</li>
-<li class="">
-<span class="block font-headline-sm text-headline-sm text-primary mb-1">Harvard-Westlake School</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Premier education</span>
-</li>
-<li class="">
-<span class="block font-headline-sm text-headline-sm text-primary mb-1">Bel-Air Country Club</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Exclusive golf &amp; social club</span>
-</li>
-<li class="">
-<span class="block font-headline-sm text-headline-sm text-primary mb-1">Rodeo Drive</span>
-<span class="font-body-md text-body-md text-on-surface-variant">Luxury shopping &amp; lifestyle</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Inquire Section -->
-<section class="py-section-padding-mobile md:py-section-padding-desktop px-8 md:px-margin-desktop bg-surface-dim" id="inquire">
-<div class="max-w-3xl mx-auto text-center">
-<h2 class="font-headline-md text-headline-md text-primary mb-6">Schedule a Private Tour</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">Register your interest to experience Estate No. 88 firsthand. Our concierge team will reach out to arrange a confidential viewing.</p>
-<form class="space-y-6 text-left">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2" for="first-name">First Name</label>
-<input class="w-full bg-surface border border-outline-variant focus:border-primary focus:ring-0 p-4 font-body-md" id="first-name" type="text">
-</div>
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2" for="last-name">Last Name</label>
-<input class="w-full bg-surface border border-outline-variant focus:border-primary focus:ring-0 p-4 font-body-md" id="last-name" type="text">
-</div>
-</div>
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2" for="email">Email</label>
-<input class="w-full bg-surface border border-outline-variant focus:border-primary focus:ring-0 p-4 font-body-md" id="email" type="email">
-</div>
-<div>
-<label class="block font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-2" for="phone">Phone</label>
-<input class="w-full bg-surface border border-outline-variant focus:border-primary focus:ring-0 p-4 font-body-md" id="phone" type="tel">
-</div>
-<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps px-8 py-5 hover:bg-primary/90 transition-colors duration-300 uppercase tracking-widest mt-4" type="button">
-                Submit Inquiry
-            </button>
-</form>
-</div>
-</section>
-<!-- SideNavBar (Concierge) & Chat Window -->
-<div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
-<!-- Chat Window -->
-<div class="hidden w-80 h-96 mb-4 bg-surface/80 backdrop-blur-xl border border-outline-variant rounded-xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300" id="ai-chat-window">
-<div class="p-4 bg-surface border-b border-outline-variant flex justify-between items-center">
-<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Aura &amp; Axis Concierge</span>
-<button class="text-on-surface-variant hover:text-primary" onclick="document.getElementById('ai-chat-window').classList.add('hidden')">
-<span class="material-symbols-outlined text-sm">close</span>
-</button>
-</div>
-<div class="flex-1 p-4 overflow-y-auto flex flex-col space-y-4">
-<div class="bg-surface-container p-3 rounded-lg rounded-tl-none self-start max-w-[85%]">
-<p class="font-body-md text-body-md text-primary text-sm">Welcome to Estate No. 88. How may I assist you with your inquiry today?</p>
-</div>
-</div>
-<div class="p-4 border-t border-outline-variant bg-surface">
-<input class="w-full bg-surface-container border-none focus:ring-0 font-body-md text-sm rounded-full px-4 py-2" placeholder="Type a message..." type="text">
-</div>
-</div>
-<!-- Concierge Button -->
-<div class="group relative flex items-center">
-<span class="absolute right-full mr-4 whitespace-nowrap bg-surface text-primary font-label-caps text-xs px-3 py-1.5 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none uppercase tracking-widest border border-outline-variant">AI Concierge</span>
-<button aria-label="Concierge Assistant" class="bg-surface backdrop-blur-[20px] border border-outline-variant rounded-full h-16 w-16 flex items-center justify-center text-primary hover:scale-105 transition-transform duration-300 shadow-xl" onclick="document.getElementById('ai-chat-window').classList.toggle('hidden')">
-<span class="material-symbols-outlined text-2xl">chat_bubble_outline</span>
-</button>
-</div>
-</div>
-<!-- Footer -->
-<footer class="bg-surface border-t border-outline-variant w-full full-width bottom-0">
-<div class="flex flex-col md:flex-row justify-between items-center px-8 md:px-margin-desktop py-12 md:py-gutter max-w-max-width mx-auto w-full">
-<div class="font-label-caps text-label-caps text-secondary mb-6 md:mb-0 text-center md:text-left tracking-widest">
-                © 2024 ARCHITECTURAL COLLECTIVE. ALL RIGHTS RESERVED.
+                <div class="pt-8">
+                    <ul class="space-y-6">
+                        <li class="flex items-start space-x-4">
+                            <span class="material-symbols-outlined text-primary mt-1">check</span>
+                            <div>
+                                <span class="block font-label-caps text-xs font-semibold text-primary uppercase tracking-widest mb-1">Materials</span>
+                                <span class="font-body-md text-secondary">Imported Italian Travertine, Custom Oak Millwork</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <span class="material-symbols-outlined text-primary mt-1">check</span>
+                            <div>
+                                <span class="block font-label-caps text-xs font-semibold text-primary uppercase tracking-widest mb-1">Technology</span>
+                                <span class="font-body-md text-secondary">Fully integrated Savant smart home ecosystem</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#">Privacy</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#">Terms</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#">Agency</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#">Inquire</a>
-</div>
-</div>
-</footer>
+            <div class="md:col-span-6 md:col-start-7 h-[600px] bg-surface-dim relative mt-12 md:mt-0 rounded-sm overflow-hidden">
+                <img alt="Interior Details" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfO-JQw2FRaCTwlKY5Jo1mau7KgA7Z6CZ9DwA8sr0BxfeqxxwQM-uCJ7-iOM47kRH7N5ZIkODt9Fk0lgQJf8ODftJfJwd9uwBgYIP13YjepkkKTgbbabOTbbdw-j7DGmVOahF69DFN2FpKGCPPuKpOjXhMhsP9e6BoMmVb_TtMJE0nbqldlGhS11bPp4HInGAbCua_lkP70FzCyw3zkw9XCjBHpIx-Rbu595lliZynyT4kjuV_lg5yQ7MgQtx1ojXSGcDwanmteiRc">
+            </div>
+        </div>
+    </section>
 
-<script>
-// Google Stitch ke exact elements ko target karne ke liye smart selectors
-const chatInput = document.querySelector('input[placeholder="Type a message..."]');
-const chatMessagesContainer = document.querySelector('.container_queries');
+    <section class="py-24 md:py-32 px-8 md:px-12 bg-surface-dim border-t border-outline-variant" id="inquire">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="font-headline-md text-4xl text-primary mb-6">Schedule a Private Tour</h2>
+            <p class="font-body-lg text-lg text-secondary mb-12">Register your interest to experience Estate No. 88 firsthand. Our concierge team will reach out to arrange a confidential viewing.</p>
+            <form class="space-y-6 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block font-label-caps text-xs font-semibold text-secondary uppercase tracking-widest mb-2" for="first-name">First Name</label>
+                        <input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary p-4 font-body-md outline-none transition-all" id="first-name" type="text">
+                    </div>
+                    <div>
+                        <label class="block font-label-caps text-xs font-semibold text-secondary uppercase tracking-widest mb-2" for="last-name">Last Name</label>
+                        <input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary p-4 font-body-md outline-none transition-all" id="last-name" type="text">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-label-caps text-xs font-semibold text-secondary uppercase tracking-widest mb-2" for="email">Email</label>
+                    <input class="w-full bg-white border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary p-4 font-body-md outline-none transition-all" id="email" type="email">
+                </div>
+                <button class="w-full bg-primary text-white font-label-caps text-xs font-semibold px-8 py-5 hover:bg-gray-800 transition-colors duration-300 uppercase tracking-widest mt-4" type="button">
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
 
-// Poore page par 'send' text wala icon dhoondna
-const sendBtn = Array.from(document.querySelectorAll('span')).find(el => el.textContent.trim() === 'send');
-
-let chatHistory = [];
-
-async function sendMessageToJanwar() {
-    if (!chatInput || !chatMessagesContainer) return;
-    
-    const message = chatInput.value.trim();
-    if (!message) return;
-
-    // 1. User ka message chat stream mein dikhana
-    appendMessage("user", message);
-    chatInput.value = "";
-
-    // 2. Render par chalne wale Janwar se baat karna
-    try {
-        const response = await fetch("https://ca-real-estate-web.onrender.com/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                message: message,
-                history: chatHistory
-            })
-        });
-
-        const data = await response.json();
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
         
-        // 3. Janwar ka reply screen par dikhana
-        appendMessage("bot", data.reply);
+        <div id="ai-chat-window" class="hidden w-80 md:w-96 h-[28rem] mb-4 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
+            <div class="p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="font-label-caps text-xs text-primary font-bold uppercase tracking-widest">Aura & Axis Concierge</span>
+                </div>
+                <button class="text-gray-400 hover:text-primary transition-colors" onclick="document.getElementById('ai-chat-window').classList.add('hidden')">
+                    <span class="material-symbols-outlined text-sm">close</span>
+                </button>
+            </div>
+            
+            <div id="chat-messages-container" class="flex-1 p-4 overflow-y-auto flex flex-col space-y-4">
+                <div class="bg-gray-100 p-3 rounded-2xl rounded-tl-sm self-start max-w-[85%]">
+                    <p class="font-body-md text-primary text-sm leading-relaxed">Welcome to Estate No. 88. How may I assist you with your inquiry today?</p>
+                </div>
+            </div>
+            
+            <div class="p-3 border-t border-gray-200 bg-white flex items-center space-x-2">
+                <input id="chat-input" class="flex-1 bg-gray-100 border-transparent focus:border-transparent focus:ring-0 font-body-md text-sm rounded-full px-4 py-3 outline-none" placeholder="Type a message..." type="text">
+                <button id="send-btn" class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-800 transition-colors shadow-md flex-shrink-0">
+                    <span class="material-symbols-outlined text-lg">send</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="group relative flex items-center">
+            <span class="absolute right-full mr-4 whitespace-nowrap bg-white text-primary font-label-caps font-semibold text-[10px] px-3 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none uppercase tracking-widest border border-gray-100">AI Concierge</span>
+            <button aria-label="Concierge Assistant" class="bg-primary text-white rounded-full h-16 w-16 flex items-center justify-center hover:scale-105 transition-transform duration-300 shadow-xl" onclick="document.getElementById('ai-chat-window').classList.toggle('hidden')">
+                <span class="material-symbols-outlined text-2xl">chat_bubble_outline</span>
+            </button>
+        </div>
+    </div>
 
-        // History yaad rakhne ke liye save karna
-        chatHistory.push({ "role": "user", "content": message });
-        chatHistory.push({ "role": "assistant", "content": data.reply });
+    <footer class="bg-surface border-t border-outline-variant w-full bottom-0">
+        <div class="flex flex-col md:flex-row justify-between items-center px-8 md:px-12 py-10 max-w-[1440px] mx-auto w-full">
+            <div class="font-label-caps text-xs font-semibold text-secondary mb-6 md:mb-0 text-center md:text-left tracking-widest">
+                © 2026 ARCHITECTURAL COLLECTIVE. ALL RIGHTS RESERVED.
+            </div>
+            <div class="flex flex-wrap justify-center gap-8">
+                <a class="font-label-caps text-xs font-semibold text-secondary hover:text-primary transition-colors tracking-widest uppercase" href="#">Privacy</a>
+                <a class="font-label-caps text-xs font-semibold text-secondary hover:text-primary transition-colors tracking-widest uppercase" href="#">Terms</a>
+                <a class="font-label-caps text-xs font-semibold text-secondary hover:text-primary transition-colors tracking-widest uppercase" href="#">Agency</a>
+            </div>
+        </div>
+    </footer>
 
-    } catch (error) {
-        appendMessage("bot", "Sorry Bro, dimaagh tak signal nahi pahuche!");
-        console.error(error);
-    }
-}
+    <script>
+        // Use EXACT IDs that we defined in the HTML above
+        const chatInput = document.getElementById('chat-input');
+        const chatMessagesContainer = document.getElementById('chat-messages-container');
+        const sendBtn = document.getElementById('send-btn');
+        
+        let chatHistory = [];
 
-function appendMessage(sender, text) {
-    const msgDiv = document.createElement("div");
-    
-    // Website ke light theme ke mutabik premium styling
-    msgDiv.style.padding = "10px 14px";
-    msgDiv.style.margin = "6px 0";
-    msgDiv.style.borderRadius = "12px";
-    msgDiv.style.maxWidth = "85%";
-    msgDiv.style.fontSize = "14px";
-    msgDiv.style.clear = "both";
-    
-    if (sender === "user") {
-        msgDiv.style.backgroundColor = "#E5E7EB"; // Clean gray for user
-        msgDiv.style.color = "#1F2937";
-        msgDiv.style.float = "right";
-    } else {
-        msgDiv.style.backgroundColor = "#F3F4F6"; // Off-white for bot
-        msgDiv.style.color = "#111827";
-        msgDiv.style.float = "left";
-        msgDiv.style.borderLeft = "3px solid #1F2937"; // Clean accent line
-    }
-    
-    msgDiv.innerText = text;
-    chatMessagesContainer.appendChild(msgDiv);
-    
-    // Auto scroll to bottom
-    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
-}
+        async function sendMessageToJanwar() {
+            // Safety check
+            if (!chatInput || !chatMessagesContainer) return;
+            
+            const message = chatInput.value.trim();
+            if (!message) return;
 
-// Click aur Enter key connections
-if (sendBtn) sendBtn.addEventListener("click", sendMessageToJanwar);
-if (chatInput) {
-    chatInput.addEventListener("keypress", function(e) {
-        if (e.key === "Enter") sendMessageToJanwar();
-    });
-}
-</script>       
+            // 1. Show user message on screen
+            appendMessage("user", message);
+            chatInput.value = ""; // Clear input box
 
-</body></html>
+            // 2. Fetch reply from Render Backend
+            try {
+                // Ensure this matches your live Render URL perfectly
+                const response = await fetch("https://ca-real-estate-web.onrender.com/chat", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        message: message,
+                        history: chatHistory
+                    })
+                });
+
+                const data = await response.json();
+                
+                // 3. Show bot reply on screen
+                appendMessage("bot", data.reply);
+
+                // Save to history
+                chatHistory.push({ "role": "user", "content": message });
+                chatHistory.push({ "role": "assistant", "content": data.reply });
+
+            } catch (error) {
+                appendMessage("bot", "System updating. Please try again in a moment.");
+                console.error(error);
+            }
+        }
+
+        // Function to create and style chat bubbles
+        function appendMessage(sender, text) {
+            const wrapperDiv = document.createElement("div");
+            wrapperDiv.style.display = "flex";
+            wrapperDiv.style.width = "100%";
+            wrapperDiv.style.marginTop = "12px";
+            wrapperDiv.style.marginBottom = "12px";
+            
+            const msgDiv = document.createElement("div");
+            // Premium styling for bubbles
+            msgDiv.style.padding = "12px 16px";
+            msgDiv.style.borderRadius = "16px";
+            msgDiv.style.maxWidth = "85%";
+            msgDiv.style.fontSize = "14px";
+            msgDiv.style.lineHeight = "1.5";
+            msgDiv.style.fontFamily = "'Inter', sans-serif";
+            
+            if (sender === "user") {
+                wrapperDiv.style.justifyContent = "flex-end";
+                msgDiv.style.backgroundColor = "#111827"; // Black bubble for user
+                msgDiv.style.color = "#ffffff";
+                msgDiv.style.borderBottomRightRadius = "4px";
+            } else {
+                wrapperDiv.style.justifyContent = "flex-start";
+                msgDiv.style.backgroundColor = "#F3F4F6"; // Light Gray bubble for bot
+                msgDiv.style.color = "#111827";
+                msgDiv.style.borderBottomLeftRadius = "4px";
+            }
+            
+            msgDiv.innerText = text;
+            wrapperDiv.appendChild(msgDiv);
+            chatMessagesContainer.appendChild(wrapperDiv);
+            
+            // Auto scroll to bottom
+            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+        }
+
+        // Event Listeners for Send Button and Enter Key
+        if (sendBtn) {
+            sendBtn.addEventListener("click", sendMessageToJanwar);
+        }
+        
+        if (chatInput) {
+            chatInput.addEventListener("keypress", function(e) {
+                if (e.key === "Enter") {
+                    e.preventDefault(); // Stop default form submission
+                    sendMessageToJanwar();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
