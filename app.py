@@ -52,6 +52,12 @@ def chat():
             }
         )
         res_data = response.json()
+        
+        # AGAR GROQ API NE ERROR BHEJA HAI TOH USAY PAKRO
+        if 'error' in res_data:
+            return jsonify({"reply": f"Groq Error Bro: {res_data['error']['message']}"})
+
+        # Agar sab theek hai toh jawab dikhao
         bot_reply = res_data['choices'][0]['message']['content']
         return jsonify({"reply": bot_reply})
 
