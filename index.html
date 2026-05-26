@@ -276,33 +276,32 @@
                background: #0F766E !important; 
                color: #ffffff !important; 
                border: 2px solid rgba(15, 118, 110, 0.4) !important; 
-               box-shadow: 0 10px 25px rgba(15,118,110,0.3) !important; 
+               box-shadow: 0 10px 25px rgba(15, 118, 110, 0.3) !important; 
                cursor: pointer !important; 
                display: flex !important; 
                align-items: center !important; 
                justify-content: center !important; 
-               font-size: 26px !important; 
                z-index: 2147483647 !important; 
                transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important; 
                outline: none !important; 
                margin: 0 !important; 
                padding: 0 !important;" 
-        onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='#0d9488';" 
+        onmouseover="this.style.transform='scale(1.05)'; this.style.borderColor='#0F766E';" 
         onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(15, 118, 110, 0.4)';">
-  🤖
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
 </button>
 
 <div id="alaaudin-chat-window" 
      style="position: fixed !important; 
-            bottom: 110px !important; 
+            bottom: 100px !important; 
             right: 30px !important; 
             width: 380px !important; 
             height: 600px !important; 
-            border-radius: 24px !important; 
+            border-radius: 20px !important; 
             overflow: hidden !important; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1) !important; 
             border: 1px solid #E2E8F0 !important; 
-            background: #FFFFFF !important; 
+            background: #ffffff !important; 
             display: none !important; 
             opacity: 0 !important; 
             transform: translateY(20px) scale(0.95) !important; 
@@ -313,7 +312,7 @@
             padding: 0 !important;">
   
   <div style="position: absolute !important; top: 14px !important; left: 16px !important; z-index: 2147483647 !important; display: flex !important; align-items: center !important; margin: 0 !important; padding: 0 !important;">
-    <button onclick="toggleAlaaudinChat()" style="background: #F3F4F6 !important; color: #334155 !important; border: 1px solid #E2E8F0 !important; width: 28px !important; height: 28px !important; border-radius: 50% !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 12px !important; font-weight: bold !important; transition: all 0.2s !important; box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;" onmouseover="this.style.background='#ef4444'; this.style.color='#ffffff'; this.style.borderColor='#ef4444';" onmouseout="this.style.background='#F3F4F6'; this.style.color='#334155'; this.style.borderColor='#E2E8F0';">
+    <button onclick="toggleAlaaudinChat()" style="background: rgba(255, 255, 255, 0.9) !important; backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; color: #64748B !important; border: 1px solid #E2E8F0 !important; width: 28px !important; height: 28px !important; border-radius: 50% !important; cursor: pointer !important; display: flex !important; align-items: center !important; justify-content: center !important; font-size: 14px !important; font-weight: bold !important; transition: all 0.2s !important; box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;" onmouseover="this.style.background='#FEE2E2'; this.style.borderColor='#FCA5A5'; this.style.color='#EF4444';" onmouseout="this.style.background='rgba(255, 255, 255, 0.9)'; this.style.borderColor='#E2E8F0'; this.style.color='#64748B';">
       ✖
     </button>
   </div>
@@ -325,7 +324,7 @@
                  width: 100% !important; 
                  height: 100% !important; 
                  display: block !important; 
-                 background: #FFFFFF !important;
+                 background: #ffffff !important;
                  overflow: hidden !important;
                  box-sizing: border-box !important;">
   </iframe>
@@ -336,13 +335,17 @@
     const chatWindow = document.getElementById('alaaudin-chat-window');
     const chatTrigger = document.getElementById('alaaudin-chat-trigger');
     
+    // Premium SVG Icons replace emojis for professional UI
+    const chatIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>';
+    const closeIcon = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+    
     if (chatWindow.style.getPropertyValue('display') === 'none') {
       chatWindow.style.setProperty('display', 'block', 'important');
       setTimeout(() => {
         chatWindow.style.setProperty('opacity', '1', 'important');
         chatWindow.style.setProperty('transform', 'translateY(0) scale(1)', 'important');
       }, 10);
-      chatTrigger.innerHTML = '✖'; 
+      chatTrigger.innerHTML = closeIcon; 
       chatTrigger.style.setProperty('background', '#ef4444', 'important');
       chatTrigger.style.setProperty('borderColor', 'rgba(239, 68, 68, 0.4)', 'important');
     } else {
@@ -351,8 +354,7 @@
       setTimeout(() => {
         chatWindow.style.setProperty('display', 'none', 'important');
       }, 300);
-      chatTrigger.innerHTML = '🤖'; 
-      // JavaScript mein bhi wapas Teal color laane ka update
+      chatTrigger.innerHTML = chatIcon; 
       chatTrigger.style.setProperty('background', '#0F766E', 'important');
       chatTrigger.style.setProperty('borderColor', 'rgba(15, 118, 110, 0.4)', 'important');
     }
