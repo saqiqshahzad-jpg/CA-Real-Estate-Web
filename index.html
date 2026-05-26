@@ -226,7 +226,6 @@
     </footer>
 
     <script>
-    // Elements ko target karne ke liye exact IDs
     const chatInput = document.getElementById('chat-input');
     const chatMessagesContainer = document.getElementById('chat-messages-container');
     const sendBtn = document.getElementById('send-btn');
@@ -241,11 +240,11 @@
 
         // 1. User ka message screen par dikhana
         appendMessage("user", message);
-        chatInput.value = ""; // Input box khali karna
+        chatInput.value = ""; 
 
         // 2. Render ke asli janwar se baat karna
         try {
-            const response = await fetch("https://ca-real-estate-ai.onrender.com", {
+            const response = await fetch("https://ca-real-estate-web.onrender.com/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -255,15 +254,35 @@
             });
 
             const data = await response.json();
-            console.log("Asli Janwar Raw Data:", data); // Browser console mein check karne ke liye
+            console.log("Asli Janwar Raw Data:", data); 
             
-            // 3. SMART CHECK: Agar backend 'reply', 'response', 'message' ya 'text' kuch bhi bhej raha hai, toh use pakdo!
-            const botReply = data.reply || data.response || data.message || data.text || (typeof data === 'string' ? data : "Response received but format mismatch.");
+            let botReply = "";
+
+            // --- DEEP SMART EXTRACTOR ---
+            if (typeof data === 'string') {
+                botReply = data;
+            } else if (data) {
+                // Check 1: Agar raw OpenAI/Groq response structure hai
+                if (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+                    botReply = data.choices[0].message.content;
+                } 
+                // Check 2: Agar standard flat objects hain
+                else {
+                    botReply = data.reply || data.response || data.message || data.text || data.output || data.answer || data.fulfillmentText;
+                }
+            }
+
+            // Fallback: Agar phir bhi kuch na mile, toh poora object stringify karke dikhao taake humein key mil jaye!
+            if (!botReply && data) {
+                botReply = JSON.stringify(data);
+            } else if (!botReply) {
+                botReply = "Received empty response from the Janwar.";
+            }
             
-            // Janwar ka asli reply screen par dikhana
+            // 3. Janwar ka reply screen par dikhana
             appendMessage("bot", botReply);
 
-            // History yaad rakhne ke liye save karna
+            // History save karna
             chatHistory.push({ "role": "user", "content": message });
             chatHistory.push({ "role": "assistant", "content": botReply });
 
@@ -273,7 +292,6 @@
         }
     }
 
-    // Function to create and style chat bubbles (Light Theme Match)
     function appendMessage(sender, text) {
         const wrapperDiv = document.createElement("div");
         wrapperDiv.style.display = "flex";
@@ -291,12 +309,12 @@
         
         if (sender === "user") {
             wrapperDiv.style.justifyContent = "flex-end";
-            msgDiv.style.backgroundColor = "#111827"; // Deep Black bubble for user
+            msgDiv.style.backgroundColor = "#111827"; 
             msgDiv.style.color = "#ffffff";
             msgDiv.style.borderBottomRightRadius = "4px";
         } else {
             wrapperDiv.style.justifyContent = "flex-start";
-            msgDiv.style.backgroundColor = "#F3F4F6"; // Elegant Light Gray for Janwar
+            msgDiv.style.backgroundColor = "#F3F4F6"; 
             msgDiv.style.color = "#111827";
             msgDiv.style.borderBottomLeftRadius = "4px";
         }
@@ -305,19 +323,14 @@
         wrapperDiv.appendChild(msgDiv);
         chatMessagesContainer.appendChild(wrapperDiv);
         
-        // Auto scroll to bottom
         chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
     }
 
-    // Click aur Enter key connections
-    if (sendBtn) {
-        sendBtn.addEventListener("click", sendMessageToJanwar);
-    }
-    
+    if (sendBtn) sendBtn.addEventListener("click", sendMessageToJanwar);
     if (chatInput) {
         chatInput.addEventListener("keypress", function(e) {
             if (e.key === "Enter") {
-                e.preventDefault(); // Stop page reload
+                e.preventDefault(); 
                 sendMessageToJanwar();
             }
         });
