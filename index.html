@@ -3,134 +3,352 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Hub - Find Your Dream Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CA Real Estate - Premium Karachi Properties</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: { 
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Crimson Pro', 'serif']
+                    },
                     colors: {
-                        primary: "#D9232D", // Red theme like Graana
+                        primary: "#1E3A8A", // Deep Sapphire Blue
+                        accent: "#B45309", // Rich Gold
+                        surface: "#F9FAFB",
                         secondary: "#111827",
-                        surface: "#F3F4F6",
+                        outline: "#E5E7EB"
                     }
                 }
             }
         }
     </script>
+    <style>
+        .dropdown-menu { display: none; }
+        .dropdown:hover .dropdown-menu { display: block; }
+    </style>
 </head>
-<body class="bg-surface text-secondary antialiased font-sans">
+<body class="bg-white text-secondary antialiased font-sans">
 
-    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+    <nav class="bg-white border-b border-outline fixed w-full top-0 z-50">
+        <div class="max-w-[1440px] mx-auto px-6 py-4">
+            <div class="flex justify-between items-center h-14">
+                
                 <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary text-3xl">real_estate_agent</span>
-                    <span class="font-bold text-2xl tracking-tight text-secondary">Property<span class="text-primary">Hub</span></span>
+                    <span class="material-symbols-outlined text-primary text-4xl">domain</span>
+                    <span class="font-serif font-bold text-2xl tracking-tighter text-primary">CA<span class="text-secondary"> Real Estate</span></span>
                 </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Buy</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Rent</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Invest</a>
+
+                <div class="hidden lg:flex items-center space-x-10">
+                    <div class="dropdown relative">
+                        <a href="#" class="text-gray-700 hover:text-primary font-semibold flex items-center gap-1 group">Buy <span class="material-symbols-outlined text-sm group-hover:rotate-180 transition-transform">expand_more</span></a>
+                        <div class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-lg border border-outline mt-2 w-56 p-4">
+                            <a href="#" class="block px-4 py-2.5 text-gray-700 hover:bg-surface rounded-lg">Luxury Villas</a>
+                            <a href="#" class="block px-4 py-2.5 text-gray-700 hover:bg-surface rounded-lg">Modern Apartments</a>
+                            <a href="#" class="block px-4 py-2.5 text-gray-700 hover:bg-surface rounded-lg">Commercial Plots</a>
+                        </div>
+                    </div>
+                    <div class="dropdown relative">
+                        <a href="#" class="text-gray-700 hover:text-primary font-semibold flex items-center gap-1 group">Rent <span class="material-symbols-outlined text-sm group-hover:rotate-180 transition-transform">expand_more</span></a>
+                        <div class="dropdown-menu absolute top-full left-0 bg-white shadow-lg rounded-lg border border-outline mt-2 w-56 p-4">
+                            <a href="#" class="block px-4 py-2.5 text-gray-700 hover:bg-surface rounded-lg">Furnished Homes</a>
+                            <a href="#" class="block px-4 py-2.5 text-gray-700 hover:bg-surface rounded-lg">Office Spaces</a>
+                        </div>
+                    </div>
+                    <a href="#" class="text-gray-700 hover:text-primary font-semibold">Invest</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-semibold">Find Agent</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-semibold">Property Trends</a>
                 </div>
-                <div class="flex items-center space-x-4">
-                    <button class="text-gray-700 font-medium hover:text-primary">Log In</button>
-                    <button class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition">Add Property</button>
+
+                <div class="flex items-center space-x-6">
+                    <button class="text-primary font-semibold hover:text-accent">Log In</button>
+                    <button class="bg-primary text-white px-7 py-3 rounded-xl font-bold hover:bg-secondary transition flex items-center gap-2"><span class="material-symbols-outlined">add_circle</span> Add Listing</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+    <section class="relative pt-40 pb-20 lg:pt-56 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80" alt="Mansion" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black/60"></div>
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80" alt="Mansion" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-secondary/80"></div>
         </div>
         
-        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Find Your Perfect Place</h1>
-            <p class="text-lg text-gray-200 mb-10">Search houses, apartments, and commercial properties across the city.</p>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <p class="text-accent font-serif font-medium text-lg tracking-widest mb-4 uppercase">CA Premium Portfolio</p>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tighter">Your Dream Property Awaits.</h1>
+            <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">Search thousands of verified residential and commercial properties in Karachi's most sought-after neighborhoods.</p>
             
-            <div class="bg-white p-4 rounded-2xl shadow-xl max-w-4xl mx-auto">
-                <div class="flex flex-col md:flex-row gap-4">
-                    <div class="flex-1 flex items-center bg-gray-100 rounded-lg px-4 py-3">
-                        <span class="material-symbols-outlined text-gray-400 mr-2">search</span>
-                        <input type="text" placeholder="Search by city, area, or project..." class="bg-transparent border-none w-full focus:ring-0 outline-none">
+            <div class="bg-white p-6 rounded-3xl shadow-2xl max-w-6xl mx-auto border border-outline">
+                <div class="flex flex-col xl:flex-row gap-5">
+                    <div class="flex-1 grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="flex items-center bg-surface rounded-xl px-5 py-4 border border-outline">
+                            <span class="material-symbols-outlined text-gray-400 mr-3">location_on</span>
+                            <input type="text" placeholder="Search Area (e.g., DHA Phase 8)" class="bg-transparent border-none w-full focus:ring-0 outline-none text-secondary">
+                        </div>
+                        <select class="bg-surface rounded-xl px-5 py-4 outline-none text-secondary font-medium border border-outline focus:ring-1 focus:ring-primary">
+                            <option>Property Type</option>
+                            <option>House</option>
+                            <option>Apartment</option>
+                            <option>Plot</option>
+                        </select>
                     </div>
-                    <select class="bg-gray-100 rounded-lg px-4 py-3 outline-none text-gray-700 font-medium">
-                        <option>Buy</option>
-                        <option>Rent</option>
-                    </select>
-                    <button class="bg-primary text-white px-8 py-3 rounded-lg font-bold hover:bg-red-700 transition w-full md:w-auto">Search</button>
+                    <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <select class="bg-surface rounded-xl px-5 py-4 outline-none text-secondary font-medium border border-outline focus:ring-1 focus:ring-primary">
+                            <option>Beds</option>
+                            <option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option>
+                        </select>
+                        <select class="bg-surface rounded-xl px-5 py-4 outline-none text-secondary font-medium border border-outline focus:ring-1 focus:ring-primary">
+                            <option>Price Min (PKR)</option>
+                            <option>1 Crore</option><option>5 Crore</option><option>10 Crore</option>
+                        </select>
+                        <select class="bg-surface rounded-xl px-5 py-4 outline-none text-secondary font-medium border border-outline focus:ring-1 focus:ring-primary">
+                            <option>Price Max (PKR)</option>
+                            <option>10 Crore</option><option>50 Crore</option><option>100 Crore</option>
+                        </select>
+                    </div>
+                    <button class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-accent transition w-full xl:w-auto text-lg flex items-center gap-3 justify-center"><span class="material-symbols-outlined">search</span> Search</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-secondary mb-2">Featured Properties</h2>
-        <p class="text-gray-500 mb-8">Explore the latest listings added to our platform.</p>
+    <section class="py-24 bg-surface" id="neighborhoods">
+        <div class="max-w-[1440px] mx-auto px-6">
+            <h2 class="text-4xl font-bold text-secondary mb-3 tracking-tight">Explore Karachi’s Elite Neighborhoods</h2>
+            <p class="text-gray-600 mb-12 text-lg">Browse curated listings in premium areas.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="relative group rounded-3xl overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1184&q=80" alt="DHA" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-serif text-white font-bold mb-2">DHA Phase 8</h3>
+                        <p class="text-white/80 mb-5">High-end villas and exclusive living.</p>
+                        <a href="#" class="bg-white/20 backdrop-blur-md text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-white hover:text-primary transition">View Properties</a>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-3xl overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Clifton" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-serif text-white font-bold mb-2">Clifton</h3>
+                        <p class="text-white/80 mb-5">Sea-view apartments and prime commercial space.</p>
+                        <a href="#" class="bg-white/20 backdrop-blur-md text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-white hover:text-primary transition">View Properties</a>
+                    </div>
+                </div>
+
+                <div class="relative group rounded-3xl overflow-hidden h-[450px]">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Gulistan-e-Johar" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-serif text-white font-bold mb-2">Gulistan-e-Johar</h3>
+                        <p class="text-white/80 mb-5">Family-oriented plots and new projects.</p>
+                        <a href="#" class="bg-white/20 backdrop-blur-md text-white font-bold px-6 py-2.5 rounded-full text-sm hover:bg-white hover:text-primary transition">View Properties</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-[1440px] mx-auto px-6">
+        <h2 class="text-4xl font-bold text-secondary mb-3 tracking-tight">Verified Premium Listings</h2>
+        <p class="text-gray-600 mb-12 text-lg">Detailed property specs for qualified buyers.</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative h-64">
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Villa" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">FOR SALE</div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-outline flex flex-col">
+                <div class="relative h-72 flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Villa" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+                    <div class="absolute top-5 left-5 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">FOR SALE</div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold text-secondary mb-1">PKR 4.5 Crore</h3>
-                    <p class="text-gray-500 text-sm mb-4">Block 15, Gulistan-e-Johar, Karachi</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-4">
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">bed</span> 4 Beds</div>
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">bathtub</span> 4 Baths</div>
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">square_foot</span> 400 Sq Yd</div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="text-3xl font-bold text-secondary mb-1">PKR 4.5 Crore</h3>
+                    <p class="text-gray-500 mb-6 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">location_on</span> Block 15, Gulistan-e-Johar, Karachi</p>
+                    <div class="flex justify-between items-center border-t border-outline pt-6 mb-8 text-gray-700">
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">bed</span>
+                            <span class="block font-semibold mt-1">4 Beds</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">bathtub</span>
+                            <span class="block font-semibold mt-1">4 Baths</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">square_foot</span>
+                            <span class="block font-semibold mt-1">400 Sq Yd</span>
+                        </div>
                     </div>
+                    <button class="w-full border-2 border-primary text-primary font-bold py-3.5 rounded-xl hover:bg-primary hover:text-white transition flex items-center justify-center gap-2 mt-auto">View Details</button>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative h-64">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Apartment" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">FOR RENT</div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-outline flex flex-col">
+                <div class="relative h-72 flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Apartment" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+                    <div class="absolute top-5 left-5 bg-accent text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">FOR RENT</div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold text-secondary mb-1">PKR 85,000 / month</h3>
-                    <p class="text-gray-500 text-sm mb-4">Phase 8, DHA, Karachi</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-4">
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">bed</span> 3 Beds</div>
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">bathtub</span> 3 Baths</div>
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">square_foot</span> 2000 Sq Ft</div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="text-3xl font-bold text-secondary mb-1">PKR 85,000 / month</h3>
+                    <p class="text-gray-500 mb-6 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">location_on</span> Phase 8, DHA, Karachi</p>
+                    <div class="flex justify-between items-center border-t border-outline pt-6 mb-8 text-gray-700">
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">bed</span>
+                            <span class="block font-semibold mt-1">3 Beds</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">bathtub</span>
+                            <span class="block font-semibold mt-1">3 Baths</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">square_foot</span>
+                            <span class="block font-semibold mt-1">2000 Sq Ft</span>
+                        </div>
                     </div>
+                    <button class="w-full border-2 border-primary text-primary font-bold py-3.5 rounded-xl hover:bg-primary hover:text-white transition flex items-center justify-center gap-2 mt-auto">View Details</button>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div class="relative h-64">
-                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1184&q=80" alt="House" class="w-full h-full object-cover">
-                    <div class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">FOR SALE</div>
+            <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-outline flex flex-col">
+                <div class="relative h-72 flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1184&q=80" alt="House" class="w-full h-full object-cover grayscale opacity-90 transition-all duration-300 hover:grayscale-0 hover:opacity-100">
+                    <div class="absolute top-5 left-5 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">FOR SALE</div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-2xl font-bold text-secondary mb-1">PKR 12 Crore</h3>
-                    <p class="text-gray-500 text-sm mb-4">Bahria Town, Karachi</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-4">
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">bed</span> 6 Beds</div>
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">bathtub</span> 7 Baths</div>
-                        <div class="flex items-center gap-2 text-gray-600"><span class="material-symbols-outlined text-sm">square_foot</span> 500 Sq Yd</div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="text-3xl font-bold text-secondary mb-1">PKR 12 Crore</h3>
+                    <p class="text-gray-500 mb-6 text-sm flex items-center gap-1.5"><span class="material-symbols-outlined text-sm">location_on</span> Bahria Town, Karachi</p>
+                    <div class="flex justify-between items-center border-t border-outline pt-6 mb-8 text-gray-700">
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">bed</span>
+                            <span class="block font-semibold mt-1">6 Beds</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">bathtub</span>
+                            <span class="block font-semibold mt-1">7 Baths</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="material-symbols-outlined text-gray-400 text-3xl">square_foot</span>
+                            <span class="block font-semibold mt-1">500 Sq Yd</span>
+                        </div>
                     </div>
+                    <button class="w-full border-2 border-primary text-primary font-bold py-3.5 rounded-xl hover:bg-primary hover:text-white transition flex items-center justify-center gap-2 mt-auto">View Details</button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer class="bg-secondary text-gray-300 py-12 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>© 2026 PropertyHub. All rights reserved.</p>
+    <section class="py-24 bg-primary text-white">
+        <div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                <span class="text-accent font-serif font-medium text-lg uppercase tracking-widest mb-4 block">Our Advantage</span>
+                <h2 class="text-5xl font-bold tracking-tight mb-8">CA Property Excellence</h2>
+                <p class="text-gray-200 text-lg leading-relaxed mb-12">Leveraging premium insights and local expertise, CA Real Estate simplifies your property journey in Karachi. We connect qualified buyers with verified sellers, ensuring professional handling at every step.</p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <button class="bg-white text-primary font-bold px-10 py-4 rounded-xl hover:bg-gray-100 transition">Speak to an Agent</button>
+                    <button class="border border-white/30 text-white font-bold px-10 py-4 rounded-xl hover:bg-white/10 transition">Property Tools</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                    <span class="material-symbols-outlined text-accent text-4xl mb-5">verified</span>
+                    <h3 class="text-2xl font-serif font-semibold mb-3">Verified Listings</h3>
+                    <p class="text-gray-200">100% authenticated property details and legal standing.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                    <span class="material-symbols-outlined text-accent text-4xl mb-5">person_celebrate</span>
+                    <h3 class="text-2xl font-serif font-semibold mb-3">Expert Agents</h3>
+                    <p class="text-gray-200">Karachi market specialists dedicated to your success.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                    <span class="material-symbols-outlined text-accent text-4xl mb-5">insights</span>
+                    <h3 class="text-2xl font-serif font-semibold mb-3">Market Insights</h3>
+                    <p class="text-gray-200">Deep trends and forecasting for smarter investments.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
+                    <span class="material-symbols-outlined text-accent text-4xl mb-5">handshake</span>
+                    <h3 class="text-2xl font-serif font-semibold mb-3">Elite Concierge</h3>
+                    <p class="text-gray-200">Personalized assistance with our unique AI AI janwar agent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-[1440px] mx-auto px-6">
+        <h2 class="text-4xl font-bold text-secondary mb-3 tracking-tight">Real Estate Insights</h2>
+        <p class="text-gray-600 mb-12 text-lg">Stay updated with Karachi’s dynamic property market.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="flex flex-col sm:flex-row gap-6 bg-surface p-6 rounded-2xl border border-outline">
+                <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Insight" class="w-full sm:w-40 h-40 object-cover rounded-xl flex-shrink-0">
+                <div class="py-2">
+                    <span class="text-accent font-semibold text-sm uppercase mb-2 block">DHA Karachi</span>
+                    <h3 class="text-2xl font-serif font-bold text-secondary mb-2 hover:text-primary cursor-pointer transition">DHA Phase 8 Trends: Villa Prices Skyrocket in Q1 2026</h3>
+                    <p class="text-gray-500 text-sm mb-4">Analyzing the high demand in Karachi's premium waterfront sector.</p>
+                    <a href="#" class="text-primary font-bold text-sm flex items-center gap-1.5 hover:gap-2 transition-all">Read More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 bg-surface p-6 rounded-2xl border border-outline">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Insight" class="w-full sm:w-40 h-40 object-cover rounded-xl flex-shrink-0">
+                <div class="py-2">
+                    <span class="text-accent font-semibold text-sm uppercase mb-2 block">Gulistan-e-Johar</span>
+                    <h3 class="text-2xl font-serif font-bold text-secondary mb-2 hover:text-primary cursor-pointer transition">Gulistan-e-Johar Investment: Plots or New Apartment Projects?</h3>
+                    <p class="text-gray-500 text-sm mb-4">Comparing investment yields for developers versus end-users in Karachi.</p>
+                    <a href="#" class="text-primary font-bold text-sm flex items-center gap-1.5 hover:gap-2 transition-all">Read More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-gray-300 py-16 mt-12">
+        <div class="max-w-[1440px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm">
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary text-4xl">domain</span>
+                    <span class="font-serif font-bold text-2xl tracking-tighter text-primary">CA<span class="text-white"> Real Estate</span></span>
+                </div>
+                <p class="text-gray-400">CA Real Estate Advisor Karachi, connecting qualified buyers and investors with premium properties in Pakistan's economic hub. Verified listings, professional expertise.</p>
+                <p class="text-white font-semibold">HQ Karachi, Pakistan</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-5 uppercase tracking-widest text-xs">Browse Premium</h4>
+                <ul class="space-y-3.5">
+                    <li><a href="#" class="hover:text-white transition">DHA Phase 8 Villas</a></li>
+                    <li><a href="#" class="hover:text-white transition">Clifton Sea View Apartments</a></li>
+                    <li><a href="#" class="hover:text-white transition">Gulistan-e-Johar Plots</a></li>
+                    <li><a href="#" class="hover:text-white transition">Bahria Town Karachi Homes</a></li>
+                    <li><a href="#" class="hover:text-white transition">Commercial Office Spaces Phase 6</a></li>
+                </div>
+            <div>
+                <h4 class="font-bold text-white mb-5 uppercase tracking-widest text-xs">Resources</h4>
+                <ul class="space-y-3.5">
+                    <li><a href="#" class="hover:text-white transition">Karachi Property Map</a></li>
+                    <li><a href="#" class="hover:text-white transition">Investment Guides DHA Clifton</a></li>
+                    <li><a href="#" class="hover:text-white transition">Legal & Tax Advisory Pakistan Real Estate</a></li>
+                    <li><a href="#" class="hover:text-white transition">Property Trends Bahria Town</a></li>
+                    <li><a href="#" class="hover:text-white transition">Area Guides Karachi Premium Areas</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-5 uppercase tracking-widest text-xs">Corporate</h4>
+                <ul class="space-y-3.5">
+                    <li><a href="#" class="hover:text-white transition">About CA Advisor</a></li>
+                    <li><a href="#" class="hover:text-white transition">Our Expert Agents Karachi</a></li>
+                    <li><a href="#" class="hover:text-white transition">Listing Requirements & Standards</a></li>
+                    <li><a href="#" class="hover:text-white transition">Careers at CA Real Estate</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms & Privacy DHA Clifton</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-[1440px] mx-auto px-6 mt-12 pt-10 border-t border-white/10 text-center text-gray-500">
+            <p>© 2026 CA Real Estate Advisor. ALL RIGHTS RESERVED. (Verified Listings Karachi DHA Clifton Gulistan-e-Johar).</p>
         </div>
     </footer>
 
