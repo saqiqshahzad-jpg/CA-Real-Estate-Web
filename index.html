@@ -226,101 +226,102 @@
     </footer>
 
     <script>
-        // Use EXACT IDs that we defined in the HTML above
-        const chatInput = document.getElementById('chat-input');
-        const chatMessagesContainer = document.getElementById('chat-messages-container');
-        const sendBtn = document.getElementById('send-btn');
+    // Elements ko target karne ke liye exact IDs
+    const chatInput = document.getElementById('chat-input');
+    const chatMessagesContainer = document.getElementById('chat-messages-container');
+    const sendBtn = document.getElementById('send-btn');
+    
+    let chatHistory = [];
+
+    async function sendMessageToJanwar() {
+        if (!chatInput || !chatMessagesContainer) return;
         
-        let chatHistory = [];
+        const message = chatInput.value.trim();
+        if (!message) return;
 
-        async function sendMessageToJanwar() {
-            // Safety check
-            if (!chatInput || !chatMessagesContainer) return;
-            
-            const message = chatInput.value.trim();
-            if (!message) return;
+        // 1. User ka message screen par dikhana
+        appendMessage("user", message);
+        chatInput.value = ""; // Input box khali karna
 
-            // 1. Show user message on screen
-            appendMessage("user", message);
-            chatInput.value = ""; // Clear input box
-
-            // 2. Fetch reply from Render Backend
-            try {
-                // Ensure this matches your live Render URL perfectly
-                const response = await fetch("https://ca-real-estate-ai.onrender.com", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        message: message,
-                        history: chatHistory
-                    })
-                });
-
-                const data = await response.json();
-                
-                // 3. Show bot reply on screen
-                appendMessage("bot", data.reply);
-
-                // Save to history
-                chatHistory.push({ "role": "user", "content": message });
-                chatHistory.push({ "role": "assistant", "content": data.reply });
-
-            } catch (error) {
-                appendMessage("bot", "System updating. Please try again in a moment.");
-                console.error(error);
-            }
-        }
-
-        // Function to create and style chat bubbles
-        function appendMessage(sender, text) {
-            const wrapperDiv = document.createElement("div");
-            wrapperDiv.style.display = "flex";
-            wrapperDiv.style.width = "100%";
-            wrapperDiv.style.marginTop = "12px";
-            wrapperDiv.style.marginBottom = "12px";
-            
-            const msgDiv = document.createElement("div");
-            // Premium styling for bubbles
-            msgDiv.style.padding = "12px 16px";
-            msgDiv.style.borderRadius = "16px";
-            msgDiv.style.maxWidth = "85%";
-            msgDiv.style.fontSize = "14px";
-            msgDiv.style.lineHeight = "1.5";
-            msgDiv.style.fontFamily = "'Inter', sans-serif";
-            
-            if (sender === "user") {
-                wrapperDiv.style.justifyContent = "flex-end";
-                msgDiv.style.backgroundColor = "#111827"; // Black bubble for user
-                msgDiv.style.color = "#ffffff";
-                msgDiv.style.borderBottomRightRadius = "4px";
-            } else {
-                wrapperDiv.style.justifyContent = "flex-start";
-                msgDiv.style.backgroundColor = "#F3F4F6"; // Light Gray bubble for bot
-                msgDiv.style.color = "#111827";
-                msgDiv.style.borderBottomLeftRadius = "4px";
-            }
-            
-            msgDiv.innerText = text;
-            wrapperDiv.appendChild(msgDiv);
-            chatMessagesContainer.appendChild(wrapperDiv);
-            
-            // Auto scroll to bottom
-            chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
-        }
-
-        // Event Listeners for Send Button and Enter Key
-        if (sendBtn) {
-            sendBtn.addEventListener("click", sendMessageToJanwar);
-        }
-        
-        if (chatInput) {
-            chatInput.addEventListener("keypress", function(e) {
-                if (e.key === "Enter") {
-                    e.preventDefault(); // Stop default form submission
-                    sendMessageToJanwar();
-                }
+        // 2. Render ke asli janwar se baat karna
+        try {
+            const response = await fetch("https://ca-real-estate-ai.onrender.com/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    message: message,
+                    history: chatHistory
+                })
             });
+
+            const data = await response.json();
+            console.log("Asli Janwar Raw Data:", data); // Browser console mein check karne ke liye
+            
+            // 3. SMART CHECK: Agar backend 'reply', 'response', 'message' ya 'text' kuch bhi bhej raha hai, toh use pakdo!
+            const botReply = data.reply || data.response || data.message || data.text || (typeof data === 'string' ? data : "Response received but format mismatch.");
+            
+            // Janwar ka asli reply screen par dikhana
+            appendMessage("bot", botReply);
+
+            // History yaad rakhne ke liye save karna
+            chatHistory.push({ "role": "user", "content": message });
+            chatHistory.push({ "role": "assistant", "content": botReply });
+
+        } catch (error) {
+            appendMessage("bot", "System updating. Please try again in a moment.");
+            console.error(error);
         }
-    </script>
+    }
+
+    // Function to create and style chat bubbles (Light Theme Match)
+    function appendMessage(sender, text) {
+        const wrapperDiv = document.createElement("div");
+        wrapperDiv.style.display = "flex";
+        wrapperDiv.style.width = "100%";
+        wrapperDiv.style.marginTop = "12px";
+        wrapperDiv.style.marginBottom = "12px";
+        
+        const msgDiv = document.createElement("div");
+        msgDiv.style.padding = "12px 16px";
+        msgDiv.style.borderRadius = "16px";
+        msgDiv.style.maxWidth = "85%";
+        msgDiv.style.fontSize = "14px";
+        msgDiv.style.lineHeight = "1.5";
+        msgDiv.style.fontFamily = "'Inter', sans-serif";
+        
+        if (sender === "user") {
+            wrapperDiv.style.justifyContent = "flex-end";
+            msgDiv.style.backgroundColor = "#111827"; // Deep Black bubble for user
+            msgDiv.style.color = "#ffffff";
+            msgDiv.style.borderBottomRightRadius = "4px";
+        } else {
+            wrapperDiv.style.justifyContent = "flex-start";
+            msgDiv.style.backgroundColor = "#F3F4F6"; // Elegant Light Gray for Janwar
+            msgDiv.style.color = "#111827";
+            msgDiv.style.borderBottomLeftRadius = "4px";
+        }
+        
+        msgDiv.innerText = text;
+        wrapperDiv.appendChild(msgDiv);
+        chatMessagesContainer.appendChild(wrapperDiv);
+        
+        // Auto scroll to bottom
+        chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+    }
+
+    // Click aur Enter key connections
+    if (sendBtn) {
+        sendBtn.addEventListener("click", sendMessageToJanwar);
+    }
+    
+    if (chatInput) {
+        chatInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                e.preventDefault(); // Stop page reload
+                sendMessageToJanwar();
+            }
+        });
+    }
+</script>
 </body>
 </html>
