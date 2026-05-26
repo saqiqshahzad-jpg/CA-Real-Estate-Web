@@ -178,39 +178,6 @@
     </section>
 
     <div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
-        
-        <div id="ai-chat-window" class="hidden w-80 md:w-96 h-[28rem] mb-4 bg-white/95 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
-            <div class="p-4 bg-gray-50 border-b border-gray-200 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <span class="font-label-caps text-xs text-primary font-bold uppercase tracking-widest">Aura & Axis Concierge</span>
-                </div>
-                <button class="text-gray-400 hover:text-primary transition-colors" onclick="document.getElementById('ai-chat-window').classList.add('hidden')">
-                    <span class="material-symbols-outlined text-sm">close</span>
-                </button>
-            </div>
-            
-            <div id="chat-messages-container" class="flex-1 p-4 overflow-y-auto flex flex-col space-y-4">
-                <div class="bg-gray-100 p-3 rounded-2xl rounded-tl-sm self-start max-w-[85%]">
-                    <p class="font-body-md text-primary text-sm leading-relaxed">Welcome to Estate No. 88. How may I assist you with your inquiry today?</p>
-                </div>
-            </div>
-            
-            <div class="p-3 border-t border-gray-200 bg-white flex items-center space-x-2">
-                <input id="chat-input" class="flex-1 bg-gray-100 border-transparent focus:border-transparent focus:ring-0 font-body-md text-sm rounded-full px-4 py-3 outline-none" placeholder="Type a message..." type="text">
-                <button id="send-btn" class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-800 transition-colors shadow-md flex-shrink-0">
-                    <span class="material-symbols-outlined text-lg">send</span>
-                </button>
-            </div>
-        </div>
-        
-        <div class="group relative flex items-center">
-            <span class="absolute right-full mr-4 whitespace-nowrap bg-white text-primary font-label-caps font-semibold text-[10px] px-3 py-2 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none uppercase tracking-widest border border-gray-100">AI Concierge</span>
-            <button aria-label="Concierge Assistant" class="bg-primary text-white rounded-full h-16 w-16 flex items-center justify-center hover:scale-105 transition-transform duration-300 shadow-xl" onclick="document.getElementById('ai-chat-window').classList.toggle('hidden')">
-                <span class="material-symbols-outlined text-2xl">chat_bubble_outline</span>
-            </button>
-        </div>
-    </div>
 
     <footer class="bg-surface border-t border-outline-variant w-full bottom-0">
         <div class="flex flex-col md:flex-row justify-between items-center px-8 md:px-12 py-10 max-w-[1440px] mx-auto w-full">
